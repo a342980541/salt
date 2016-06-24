@@ -16,3 +16,9 @@ untar filebeat:
 create softlink:
   cmd.run:
     - name: ln -s /opt/filebeat-{{ pillar['version']['filebeat'] }} /opt/filebeat
+    - onlyif: 'test ! -d /opt/filebeat'
+#start filebeat
+#start filebeat:
+#   cmd.run:
+#     - name: nohup /opt/filebeat/filebeat -e -c /opt/filebeat/$1 -d "publish"
+#     - onlyif: 'test ($(ps -ef | grep -wc filebeat) -eq 0 )'

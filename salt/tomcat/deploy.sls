@@ -1,3 +1,9 @@
+#check if Tomcat is installed
+check_tomcat_installed:
+  cmd.run:
+    - name: salt-call state.apply tomcat.install
+    - onlyif: 'test ! -L /opt/apache-tomcat'
+
 #copy wars to webapps folder
 copy_wars:
   file.recurse:

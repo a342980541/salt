@@ -8,12 +8,6 @@ copy_ecube:
 #build_ecube:
 #  cmd.run:
 #    - name: C:/Program%20Files/Sisense/Prism/Psm.exe ecube build filename=D:/PMT/PMTDM.ecube mode=full serveraddress=localhost
-#    - timeout: 3000
-
-#delete folder
-#delete folder:
-#  file.absent:
-#    - name: C:/Program Files/Sisense/PrismWeb/client/
 
 #copy Sisense Custimization folder
 copy_files:

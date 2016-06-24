@@ -10,9 +10,5 @@ unzip pdi-ce:
     - name: archive.cmd_unzip
     - zip_file: /opt/pdi-ce-{{ pillar['version']['kettle'] }}.zip
     - dest: /opt
+    - onlyif: 'test ! -d /opt/data-integration'
 
-#create soft link
-#create softlink:
-#  cmd.run:
-#    - name: ln -s /opt/pdi-ce-{{ pillar['version']['kettle'] }} /opt/pdi-ce
-#    - onlyif: [ ! -L /opt/pdi-ce ]
